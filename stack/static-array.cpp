@@ -1,11 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
+const int N = 500;
 
 class Stack
 {
 public:
-    const int N = 500;
-    int arr[500];
+    
+    int arr[N];
     int stack_size;
     Stack()
     {
@@ -25,7 +26,7 @@ public:
         arr[stack_size - 1] = val;
     }
     // delete the topmost element from the stack
-    void pop(int val)
+    void pop()
     {
         if (stack_size == 0)
         {
@@ -38,11 +39,11 @@ public:
 
     //returns the top element from the stack
 
-    void top(){
+    int top(){
         if (stack_size == 0)
         {
             cout << "stack is empty\n";
-            return;
+            return -1;
         }
         return arr[stack_size-1];
     }
@@ -50,4 +51,23 @@ public:
 
 int main()
 {
+    Stack st;
+    st.push(4);
+    cout<<st.top()<<"\n";
+    st.push(2);
+    cout<<st.top()<<"\n";
+    st.push(1);
+    cout<<st.top()<<"\n";
+    st.push(6);
+    cout<<st.top()<<"\n";
+    st.pop();
+    cout<<st.top()<<"\n";
+    st.pop();
+    cout<<st.top()<<"\n";
+    st.pop();
+    cout<<st.top()<<"\n";
+    st.pop();
+    cout<<st.top()<<"\n";
+    st.pop();
+    cout<<st.top()<<"\n";
 }
